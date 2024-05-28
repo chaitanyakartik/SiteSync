@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <EditText
+        android:id="@+id/editTextEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:hint="Email" />
+
+    <EditText
+        android:id="@+id/editTextName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:layout_below="@+id/editTextEmail"
+        android:hint="Name" />
+
+    <EditText
+        android:id="@+id/editTextNumber"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/editTextName"
+        android:layout_marginBottom="16dp"
+        android:hint="Number" />
+
+    <EditText
+        android:id="@+id/editTextPassword"
+        android:layout_width="match_parent"
+        android:layout_below="@id/editTextNumber"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:hint="Password" />
+
+    <Spinner
+        android:id="@+id/spinnerRole"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/editTextPassword"
+        android:layout_marginBottom="16dp" />
+
+    <Spinner
+        android:id="@+id/spinnerLocations"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/spinnerRole"
+        android:layout_marginBottom="16dp" />
+
+    <Button
+        android:id="@+id/buttonAddLocation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/spinnerLocations"
+        android:layout_marginBottom="16dp"
+        android:text="Add Location" />
+
+
+    <ListView
+        android:id="@+id/listViewSelectedLocations"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/buttonAddLocation" />
+
+    <Button
+        android:id="@+id/buttonAddEmployee"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/listViewSelectedLocations"
+        android:text="Add Employee" />
+
+</RelativeLayout>

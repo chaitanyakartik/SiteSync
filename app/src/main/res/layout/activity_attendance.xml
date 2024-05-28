@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activityKotlinFiles.AttendanceActivity">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardview_logged_in_location"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        app:cardCornerRadius="8dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/teal"
+            android:orientation="horizontal"
+            android:padding="16dp">
+
+            <LinearLayout
+                android:layout_width="236dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textViewLocation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="No recent check-ins without logging check-out"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/textViewDate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/textViewCheckInTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textSize="16sp" />
+
+
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/imageViewLogout"
+                android:layout_width="100sp"
+                android:layout_height="70dp"
+                android:scaleType="centerCrop"
+                android:src="@color/teal" />
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <GridView
+        android:id="@+id/attendanceGridView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/cardview_logged_in_location"
+        android:horizontalSpacing="10dp"
+        android:numColumns="1"
+        android:stretchMode="columnWidth"
+        android:verticalSpacing="10dp" />
+
+</RelativeLayout>

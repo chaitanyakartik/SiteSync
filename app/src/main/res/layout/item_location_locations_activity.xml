@@ -1,0 +1,70 @@
+<!-- item_location.xml -->
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    android:background="@drawable/stock_profile_man1"
+    android:layout_marginLeft="16dp"
+    android:layout_marginTop="16dp"
+    android:padding="16dp"
+    app:cardCornerRadius="8dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/teal"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/nicknameTextView"
+            android:text="Garuda"
+            android:layout_width="wrap_content"
+            android:textStyle="bold"
+            android:textSize="24dp"
+            android:layout_height="wrap_content" />
+
+
+
+        <TextView
+            android:id="@+id/latitudeTextView"
+            android:text="Latitude: 72"
+            android:textSize="18dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/longitudeTextView"
+            android:text="Longitude: 12"
+            android:textSize="18dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/addressTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Address: asfd asfd asdf sfdasfdasadfsdafdsa  adsffdas as d asfds asaddsfasaf dasd  afsdasdf"
+            android:textSize="14sp"
+             />
+
+        <TextView
+            android:id="@+id/pincodeTextView"
+            android:text="Pincode: 560017"
+            android:textSize="14sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/activeTextView"
+            android:text="Active: True"
+            android:layout_marginTop="6dp"
+            android:textSize="18sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>
+

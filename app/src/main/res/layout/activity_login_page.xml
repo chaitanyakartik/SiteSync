@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <EditText
+        android:id="@+id/editTextEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:text=""
+        android:hint="Enter ID" />
+
+    <EditText
+        android:id="@+id/editTextPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/editTextEmail"
+        android:text=""
+        android:layout_marginBottom="16dp"
+        android:hint="Enter Password" />
+
+    <Button
+        android:id="@+id/buttonLogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/editTextPassword"
+        android:layout_marginBottom="16dp"
+        android:text="Login" />
+
+    <Button
+        android:id="@+id/buttonForgotPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/buttonLogin"
+        android:layout_marginBottom="16dp"
+        android:text="Forgot Password" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/buttonAdminView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/buttonForgotPassword"
+        android:layout_marginBottom="16dp"
+        android:textAllCaps="false"
+        android:background="@drawable/my_shaped_button"
+        android:shadowColor="@color/black"
+        android:text="Admin View" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/buttonEmployeeView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/buttonAdminView"
+        android:layout_marginBottom="16dp"
+        android:textAllCaps="false"
+        android:background="@drawable/my_shaped_button"
+        android:shadowColor="@color/black"
+        android:text="Employee View" />
+
+
+</RelativeLayout>

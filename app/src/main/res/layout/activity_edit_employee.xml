@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/textViewEmail"
+        android:layout_width="match_parent"
+        android:text="Email"
+        android:textSize="16dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"/>
+
+    <EditText
+        android:id="@+id/editTextName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Name"
+        android:layout_below="@id/textViewEmail"
+        android:layout_marginBottom="16dp"/>
+
+    <EditText
+        android:id="@+id/editTextNumber"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Number"
+        android:layout_below="@id/editTextName"
+        android:layout_marginBottom="16dp"/>
+
+
+
+    <Spinner
+        android:id="@+id/spinnerLocations"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/editTextNumber"
+        android:layout_marginBottom="16dp"/>
+
+    <Button
+        android:id="@+id/buttonAddLocation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Add Location"
+        android:layout_below="@id/spinnerLocations"
+        android:layout_marginBottom="16dp"/>
+
+
+        <ListView
+            android:id="@+id/listViewSelectedLocations"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/buttonAddLocation"/>
+
+    <Button
+        android:id="@+id/buttonEditEmployee"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Edit Employee"
+        android:layout_below="@id/listViewSelectedLocations"/>
+
+</RelativeLayout>

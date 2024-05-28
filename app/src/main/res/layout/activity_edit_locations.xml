@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <EditText
+        android:id="@+id/editTextNickname"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:text="Garuda"
+        android:hint="NickName" />
+
+    <EditText
+        android:id="@+id/editTextAddress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Magrath Rd, Ashok Nagar, Bengaluru, Karnataka 560025"
+        android:layout_below="@id/editTextNickname"
+        android:layout_marginBottom="16dp"
+        android:hint="Address" />
+
+    <EditText
+        android:id="@+id/editTextPincode"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="560017"
+        android:layout_below="@id/editTextAddress"
+        android:layout_marginBottom="16dp"
+        android:hint="Pincode" />
+
+    <Button
+        android:id="@+id/buttonGetCoordinates"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/editTextPincode"
+        android:text="Get Current Coordinates" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_below="@id/buttonGetCoordinates"
+        android:id="@+id/linearLayoutLatitude"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/textViewLatitudeHARDCODE"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:layout_marginTop="8dp"
+            android:text="Latitude: "
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/textViewLatitude"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:layout_marginTop="8dp"
+            android:text="   234"
+            android:textSize="18sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_below="@id/linearLayoutLatitude"
+        android:id="@+id/linearLayoutLongitude"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/textViewLongitudeHARDCODE"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:layout_marginTop="8dp"
+            android:text="Longitude: "
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/textViewLongitude"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:layout_marginTop="8dp"
+            android:text="234"
+            android:textSize="18sp" />
+
+    </LinearLayout>
+
+    <Switch
+        android:id="@+id/activeSwitch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/linearLayoutLongitude"
+        android:text="Active/Inactive"
+        android:textSize="18dp" />
+
+    <Button
+        android:id="@+id/buttonEditLocation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/activeSwitch"
+        android:text="Edit Location" />
+
+</RelativeLayout>
+

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <EditText
+        android:id="@+id/editTextNickname"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="NickName"
+        android:layout_marginBottom="16dp"/>
+
+    <EditText
+        android:id="@+id/editTextAddress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Address"
+        android:layout_below="@id/editTextNickname"
+        android:layout_marginBottom="16dp"/>
+
+    <EditText
+        android:id="@+id/editTextPincode"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Pincode"
+        android:layout_below="@id/editTextAddress"
+        android:layout_marginBottom="16dp"/>
+
+    <Button
+        android:id="@+id/buttonGetCoordinates"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Get Current Coordinates"
+        android:layout_below="@id/editTextPincode"/>
+
+    <TextView
+        android:id="@+id/textViewLatitude"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:layout_marginTop="8dp"
+        android:text="Latitude: 234"
+        android:layout_below="@id/buttonGetCoordinates"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/textViewLongitude"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_below="@id/textViewLatitude"
+        android:text="Longitude: 65"
+        android:textSize="18sp" />
+
+    <androidx.appcompat.widget.SwitchCompat
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/activeSwitch"
+        android:textSize="18dp"
+        android:layout_below="@id/textViewLongitude"
+        android:text="Active/Inactive" />
+
+    <Button
+        android:id="@+id/buttonAddLocation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Add Location"
+        android:layout_below="@id/activeSwitch"/>
+
+</RelativeLayout>
