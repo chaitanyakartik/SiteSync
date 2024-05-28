@@ -9,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.sitesyncversionbeta.R
 import android.widget.Toast
 import androidx.annotation.RequiresApi
+import com.example.sitesyncversionbeta.DeleteLocationEmployeeActivity
 import com.example.sitesyncversionbeta.activityKotlinFiles.adminViewSpecific.employeeManager.EmployeeManagerActivity
 import com.example.sitesyncversionbeta.activityKotlinFiles.adminViewSpecific.locationManager.LocationsActivity
 import com.example.sitesyncversionbeta.LoginActivity
@@ -29,12 +30,17 @@ class MainActivityAdminView : AppCompatActivity() {
         setContentView(binding.root)
 
         val userDetails = intent.getSerializableExtra("UserDetails") as? Employee
+        if (userDetails != null) {
+            binding.textViewEmail.text = userDetails.email
+            binding.textViewNumber.text = userDetails.number
+            binding.textView.text = userDetails.name
+        }
 
         // Set click listener for bottom navigation items
         binding.bottomNavigationView.setOnItemSelectedListener { menuItem ->
             when (menuItem.itemId) {
                 R.id.navigation_settings -> {
-                    // Open MessagingActivity
+                    // Open Settings
                     val intent = Intent(this@MainActivityAdminView, EditUserProfileActivity::class.java)
                     intent.putExtra("UserDetails", userDetails)
                     startActivity(intent)
@@ -74,6 +80,12 @@ class MainActivityAdminView : AppCompatActivity() {
             R.id.locations_manager -> {
                 // Handle action_item2 click
                 val intent = Intent(this, LocationsActivity::class.java)
+                startActivity(intent)
+                true
+            }
+            R.id.delete -> {
+                // Handle action_item2 click
+                val intent = Intent(this, DeleteLocationEmployeeActivity::class.java)
                 startActivity(intent)
                 true
             }

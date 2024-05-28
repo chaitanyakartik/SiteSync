@@ -8,6 +8,9 @@
         android:id="@+id/locations_manager"
         android:title="Locations Manager"/>
     <item
+        android:id="@+id/delete"
+        android:title="Delete"/>
+    <item
         android:id="@+id/logout"
         android:title="Logout"/>
 

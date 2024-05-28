@@ -26,7 +26,6 @@ class EmployeeDetailsActivity : AppCompatActivity() {
 
         // Display employee details using employee object
         binding.textViewName.text = employee.name
-        //binding.imageViewProfilePic.setImageResource(employee.profilePictureID)
         binding.textViewEmail.text = "Email: "+employee.email
         binding.textViewNumber.text = "Number: "+employee.number
 

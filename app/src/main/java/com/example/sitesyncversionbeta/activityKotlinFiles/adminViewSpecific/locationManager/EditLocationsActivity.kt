@@ -34,7 +34,6 @@ class EditLocationsActivity : AppCompatActivity() {
 
         binding.textViewLatitude.text = location.latitude.toString()
         binding.textViewLongitude.text = location.longitude.toString()
-        binding.activeSwitch.isActivated = location.active
 
         var latitudeInput = 0.0
         var longitudeInput = 0.0
@@ -61,8 +60,7 @@ class EditLocationsActivity : AppCompatActivity() {
                 address=binding.editTextAddress.text.toString(),
                 latitude=binding.textViewLatitude.text.toString().toDouble(),
                 longitude=binding.textViewLongitude.text.toString().toDouble(),
-
-                active=binding.activeSwitch.isActivated,
+                active=true,
                 pincode=binding.editTextPincode.text.toString())
 
             CoroutineScope(Dispatchers.Main).launch{

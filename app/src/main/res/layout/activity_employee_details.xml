@@ -8,39 +8,14 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/card_view"
+        <TextView
+            android:id="@+id/textViewName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="16dp"
-            app:layout_constraintTop_toTopOf="parent">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:padding="16dp">
-
-                <ImageView
-                    android:id="@+id/imageViewProfilePic"
-                    android:layout_width="match_parent"
-                    android:layout_height="200dp"
-                    android:adjustViewBounds="true"
-                    android:scaleType="fitCenter"
-                    android:src="@drawable/stock_profile_man1" />
-
-                <TextView
-                    android:id="@+id/textViewName"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:text="Employee Name"
-                    android:textColor="@color/teal"
-
-                    android:textSize="26sp" />
-
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
+            android:layout_marginTop="8dp"
+            android:text="Email: Employee Name"
+            android:textSize="30sp" />
 
         <TextView
             android:id="@+id/textViewEmail"
@@ -50,7 +25,7 @@
             android:layout_marginTop="8dp"
             android:text="Email: Employee mail"
             android:textSize="18sp"
-            app:layout_constraintTop_toBottomOf="@id/card_view" />
+            app:layout_constraintTop_toBottomOf="@id/textViewName" />
 
         <TextView
             android:id="@+id/textViewNumber"
@@ -62,24 +37,35 @@
             android:textSize="18sp"
             app:layout_constraintTop_toBottomOf="@id/textViewEmail" />
 
-        <ListView
-            android:id="@+id/locationsListView"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:layout_constraintBottom_toTopOf="@id/attendanceAdminGridView"
-            app:layout_constraintTop_toBottomOf="@id/textViewNumber" />
+            app:layout_constraintTop_toBottomOf="@id/textViewNumber"
+            android:orientation="vertical"
+            android:layout_height="match_parent">
 
 
-        <GridView
-            android:id="@+id/attendanceAdminGridView"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:horizontalSpacing="10dp"
-            android:numColumns="1"
-            android:stretchMode="columnWidth"
-            android:verticalSpacing="10dp"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/locationsListView" />
+                <ListView
+                    android:id="@+id/locationsListView"
+                    android:layout_width="match_parent"
+                    android:layout_weight="1"
+                    android:layout_height="150sp" />
+
+
+
+
+                <GridView
+                    android:id="@+id/attendanceAdminGridView"
+                    android:layout_width="match_parent"
+                    android:layout_height="450sp"
+                    android:horizontalSpacing="10dp"
+                    android:layout_weight="1"
+                    android:numColumns="1"
+                    android:stretchMode="columnWidth"
+                    android:verticalSpacing="10dp" />
+
+
+        </LinearLayout>
+
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

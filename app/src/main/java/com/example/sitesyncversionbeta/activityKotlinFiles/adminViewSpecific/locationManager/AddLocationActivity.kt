@@ -56,8 +56,7 @@ class AddLocationActivity : AppCompatActivity() {
                 address=binding.editTextAddress.text.toString(),
                 latitude=binding.textViewLatitude.text.toString().toDouble(),
                 longitude=binding.textViewLongitude.text.toString().toDouble(),
-
-                active=binding.activeSwitch.isActivated,
+                active=true,
                 pincode=binding.editTextPincode.text.toString())
 
             CoroutineScope(Dispatchers.Main).launch{

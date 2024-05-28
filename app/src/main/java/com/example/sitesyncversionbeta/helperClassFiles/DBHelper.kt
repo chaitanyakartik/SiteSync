@@ -388,4 +388,41 @@ class DBHelper {
             }
     }
 
+    //=========================================================================================================================
+
+    suspend fun deleteEmployee(employeeId: String, context: Context) = withContext(Dispatchers.IO) {
+        val employeeRef = database.child("employees").child(employeeId)
+
+        try {
+            employeeRef.removeValue().await()
+            withContext(Dispatchers.Main) {
+                Toast.makeText(context, "Employee deleted successfully", Toast.LENGTH_SHORT).show()
+            }
+        } catch (e: Exception) {
+            // Handle database error
+            println("Failed to delete employee: ${e.message}")
+            withContext(Dispatchers.Main) {
+                Toast.makeText(context, "Failed to delete employee", Toast.LENGTH_SHORT).show()
+            }
+        }
+    }
+
+    suspend fun deleteLocation(locationId: String, context: Context) = withContext(Dispatchers.IO) {
+        val locationRef = database.child("locations").child(locationId)
+
+        try {
+            locationRef.removeValue().await()
+            withContext(Dispatchers.Main) {
+                Toast.makeText(context, "Location deleted successfully", Toast.LENGTH_SHORT).show()
+            }
+        } catch (e: Exception) {
+            // Handle database error
+            println("Failed to delete location: ${e.message}")
+            withContext(Dispatchers.Main) {
+                Toast.makeText(context, "Failed to delete location", Toast.LENGTH_SHORT).show()
+            }
+        }
+    }
+
+
 }

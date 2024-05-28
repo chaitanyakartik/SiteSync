@@ -17,6 +17,21 @@
         android:theme="@style/Theme.SiteSyncVersionBeta"
         tools:targetApi="31">
         <activity
+            android:name=".ConfirmEmployeeDeletionActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ConfirmLocationDeletionActivity"
+            android:exported="false" />
+        <activity
+            android:name=".PermanentlyDeleteLocationsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".PermanentlyDeleteEmployeesActivity"
+            android:exported="false" />
+        <activity
+            android:name=".DeleteLocationEmployeeActivity"
+            android:exported="false" />
+        <activity
             android:name=".activityKotlinFiles.adminViewSpecific.employeeManager.EditEmployeeActivity"
             android:exported="false" />
         <activity
@@ -25,8 +40,6 @@
         <activity
             android:name=".activityKotlinFiles.adminViewSpecific.employeeManager.EmployeeManagerActivity"
             android:exported="false" />
-
-
         <activity
             android:name=".activityKotlinFiles.adminViewSpecific.locationManager.EditLocationsActivity"
             android:exported="false" />
@@ -36,8 +49,6 @@
         <activity
             android:name=".activityKotlinFiles.adminViewSpecific.locationManager.LocationsActivity"
             android:exported="false" />
-
-
         <activity
             android:name=".activityKotlinFiles.employeeViewSpecific.ConfirmAttendanceActivity"
             android:exported="false" />
@@ -47,22 +58,18 @@
         <activity
             android:name=".activityKotlinFiles.adminViewSpecific.AttendanceAdminViewActivity"
             android:exported="false" />
-
         <activity
             android:name=".activityKotlinFiles.employeeViewSpecific.AttendanceActivity"
             android:exported="false" />
-
         <activity
             android:name=".activityKotlinFiles.adminViewSpecific.MainActivityAdminView"
             android:exported="false" />
         <activity
             android:name=".activityKotlinFiles.ForgotPasswordActivity"
             android:exported="false" />
-
         <activity
             android:name=".activityKotlinFiles.EditUserProfileActivity"
             android:exported="false" />
-
         <activity
             android:name=".LoginActivity"
             android:exported="true">
@@ -72,11 +79,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".activityKotlinFiles.employeeViewSpecific.MainActivity"
             android:exported="true" />
-
     </application>
 
 </manifest>
