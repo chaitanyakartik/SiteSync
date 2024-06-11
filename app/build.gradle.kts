@@ -12,6 +12,7 @@ android {
         viewBinding = true
     }
 
+
     sourceSets {
         getByName("main").res.srcDirs(
             listOf(
@@ -72,4 +73,7 @@ dependencies {
 
     implementation ("com.google.android.gms:play-services-auth:19.2.0")
     implementation("com.google.android.gms:play-services-location:21.2.0")
+
+    implementation ("net.sourceforge.jexcelapi:jxl:2.6.12")
+
 }

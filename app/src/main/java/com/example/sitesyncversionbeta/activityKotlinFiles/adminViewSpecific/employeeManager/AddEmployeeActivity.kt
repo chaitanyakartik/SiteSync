@@ -29,9 +29,6 @@ class AddEmployeeActivity : AppCompatActivity() {
         binding = ActivityAddEmployeeBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.editTextNumber.setText("345345345")
-        binding.editTextName.setText("Jwon Dwoe")
-
         val roles = listOf("Admin", "Employee")
         val spinnerAdapter = ArrayAdapter(this,android.R.layout.simple_spinner_dropdown_item,roles)
         binding.spinnerRole.adapter = spinnerAdapter

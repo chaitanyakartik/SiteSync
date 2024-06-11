@@ -68,21 +68,6 @@ class DBHelper {
         return@withContext employee
     }
 
-    suspend fun retrievePermissibleDistance(): Double = withContext(Dispatchers.IO){
-        val valueRef = database.child("miscelleneious").child("permissibleDistance")
-        var value = 0.0
-
-        try {
-            val snapshot = valueRef.get().await()
-            value = snapshot.getValue(Double::class.java)!!
-        } catch (e: Exception) {
-            // Handle database error
-            println("Database error: ${e.message}")
-        }
-
-        return@withContext value
-    }
-
     // Retrieve Employee Attendance by Employee ID
     suspend fun retrieveEmployeeAttendance(employeeId: String): List<AttendanceEntry> = withContext(Dispatchers.IO) {
         val attendanceRef = database.child("employees").child(employeeId).child("attendanceEntries")

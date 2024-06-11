@@ -1,17 +1,13 @@
-package com.example.sitesyncversionbeta
+package com.example.sitesyncversionbeta.activityKotlinFiles
 
 import DBHelper
 import android.content.Intent
 import android.os.Bundle
 import android.widget.AdapterView
 import android.widget.ListView
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
-import com.example.sitesyncversionbeta.adapters.EmployeeAdapter
+import com.example.sitesyncversionbeta.R
 import com.example.sitesyncversionbeta.adapters.LocationLocationsActivityAdapter
-import com.example.sitesyncversionbeta.databinding.ActivityPermanentlyDeleteLocationsBinding
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch

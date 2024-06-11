@@ -9,7 +9,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.sitesyncversionbeta.R
 import android.widget.Toast
 import androidx.annotation.RequiresApi
-import com.example.sitesyncversionbeta.DeleteLocationEmployeeActivity
+import com.example.sitesyncversionbeta.activityKotlinFiles.DeleteLocationEmployeeActivity
 import com.example.sitesyncversionbeta.activityKotlinFiles.adminViewSpecific.employeeManager.EmployeeManagerActivity
 import com.example.sitesyncversionbeta.activityKotlinFiles.adminViewSpecific.locationManager.LocationsActivity
 import com.example.sitesyncversionbeta.LoginActivity

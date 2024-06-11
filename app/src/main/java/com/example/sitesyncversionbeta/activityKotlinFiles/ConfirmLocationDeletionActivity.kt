@@ -1,8 +1,9 @@
-package com.example.sitesyncversionbeta
+package com.example.sitesyncversionbeta.activityKotlinFiles
 
 import DBHelper
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.example.sitesyncversionbeta.R
 import com.example.sitesyncversionbeta.dataClassFiles.Location
 import com.example.sitesyncversionbeta.databinding.ActivityConfirmLocationDeletionBinding
 import kotlinx.coroutines.CoroutineScope

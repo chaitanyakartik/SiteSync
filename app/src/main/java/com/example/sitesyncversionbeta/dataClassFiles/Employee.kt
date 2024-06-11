@@ -11,7 +11,7 @@ data class Employee(
     val email: String = "",
     val profilePicture: String = "",
     val role: String = "",
-    val attendanceEntries: Map<String, AttendanceEntry> = emptyMap(),
+    var attendanceEntries: Map<String, AttendanceEntry> = emptyMap(),
     val assignedLocations: List<String> = emptyList()
 ) : Serializable
 
