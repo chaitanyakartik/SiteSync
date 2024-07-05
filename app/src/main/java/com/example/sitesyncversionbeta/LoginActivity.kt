@@ -39,15 +39,15 @@ class LoginActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        binding.buttonEmployeeView.setOnClickListener {
-            val intent = Intent(this, MainActivity::class.java)
-            startActivity(intent)
-        }
-
-        binding.buttonAdminView.setOnClickListener {
-            val intent = Intent(this, MainActivityAdminView::class.java)
-            startActivity(intent)
-        }
+//        binding.buttonEmployeeView.setOnClickListener {
+//            val intent = Intent(this, MainActivity::class.java)
+//            startActivity(intent)
+//        }
+//
+//        binding.buttonAdminView.setOnClickListener {
+//            val intent = Intent(this, MainActivityAdminView::class.java)
+//            startActivity(intent)
+//        }
 
         // Initialize Firebase Auth and Realtime Database
         auth = FirebaseAuth.getInstance()

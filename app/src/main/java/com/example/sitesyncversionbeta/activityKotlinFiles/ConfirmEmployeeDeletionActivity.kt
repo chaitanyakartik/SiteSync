@@ -2,6 +2,7 @@ package com.example.sitesyncversionbeta.activityKotlinFiles
 
 import DBHelper
 import android.os.Bundle
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import com.example.sitesyncversionbeta.R
 import com.example.sitesyncversionbeta.dataClassFiles.Employee
@@ -25,12 +26,15 @@ class ConfirmEmployeeDeletionActivity : AppCompatActivity() {
         binding.textViewName.text = employee.name
         binding.textViewNumber.text = employee.number
 
+
+
         val dbHelper = DBHelper()
 
         binding.buttonConfirmDeletion.setOnClickListener {
-
+            val password = binding.passwordEditText.text.toString().trim()
+            Log.d("CHECK THIS", employee.email+password)
             CoroutineScope(Dispatchers.Main).launch {
-                dbHelper.deleteEmployee(employee.employeeId, this@ConfirmEmployeeDeletionActivity)
+                dbHelper.deleteEmployee(employee.employeeId, employee.authUID,employee.email,password,this@ConfirmEmployeeDeletionActivity)
             }
         }
     }

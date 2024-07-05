@@ -15,9 +15,16 @@ import kotlin.math.sqrt
 import java.text.SimpleDateFormat
 import java.util.*
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseAuthException
 import com.google.firebase.auth.UserProfileChangeRequest
+import com.google.firebase.auth.ktx.auth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ktx.database
+import com.google.firebase.ktx.Firebase
+import android.util.Log
+
+
 
 class DBHelper {
 
@@ -375,22 +382,88 @@ class DBHelper {
 
     //=========================================================================================================================
 
-    suspend fun deleteEmployee(employeeId: String, context: Context) = withContext(Dispatchers.IO) {
+//    suspend fun deleteEmployee(employeeId: String, context: Context) = withContext(Dispatchers.IO) {
+//        val employeeRef = Firebase.database.reference.child("employees").child(employeeId)
+//        val auth = FirebaseAuth.getInstance()
+//
+//        try {
+//            // Retrieve employee data
+//            val employeeSnapshot = employeeRef.get().await()
+//            val authUID = employeeSnapshot.child("authUID").getValue(String::class.java)
+//
+//            // Remove user data from Realtime Database
+//            employeeRef.removeValue().await()
+//
+//            // Delete user from Firebase Authentication
+//            authUID?.let {
+//                auth.deleteUser(it).await()
+//            }
+//
+//            withContext(Dispatchers.Main) {
+//                Toast.makeText(context, "Employee deleted successfully", Toast.LENGTH_SHORT).show()
+//            }
+//        } catch (e: FirebaseAuthException) {
+//            // Handle Firebase Auth errors
+//            println("Failed to delete employee from Auth: ${e.message}")
+//            withContext(Dispatchers.Main) {
+//                Toast.makeText(context, "Failed to delete employee from Auth", Toast.LENGTH_SHORT).show()
+//            }
+//        } catch (e: Exception) {
+//            // Handle other errors
+//            println("Failed to delete employee: ${e.message}")
+//            withContext(Dispatchers.Main) {
+//                Toast.makeText(context, "Failed to delete employee", Toast.LENGTH_SHORT).show()
+//            }
+//        }
+//    }
+
+    suspend fun deleteEmployee(employeeId: String, authUID: String, employeeEmail:String, password: String, context: Context) = withContext(Dispatchers.IO) {
         val employeeRef = database.child("employees").child(employeeId)
 
         try {
+            // First, delete from Realtime Database
+
+            // Second, delete from Firebase Authentication
+            FirebaseAuth.getInstance().signInWithEmailAndPassword(employeeEmail, password)
+                .addOnCompleteListener { task ->
+                    if (task.isSuccessful) {
+                        // Get the FirebaseUser
+                        val user = FirebaseAuth.getInstance().currentUser
+
+                        // Check if the user exists and delete
+                        if (user != null && user.uid == authUID) {
+                            user.delete()
+                                .addOnSuccessListener {
+                                    // User deleted from Authentication successfully
+                                    Toast.makeText(context, "Employee deleted successfully", Toast.LENGTH_SHORT).show()
+                                }
+                                .addOnFailureListener { e ->
+                                    // Handle failure to delete from Authentication
+                                    println("Failed to delete user from Authentication: ${e.message}")
+                                    Log.d("CHECK THIS", "Failed to delete user from Authentication: ${e.message}")
+                                    Toast.makeText(context, "Failed to delete employee", Toast.LENGTH_SHORT).show()
+                                }
+                        } else {
+                            // User not found or UID mismatch
+                            Toast.makeText(context, "User not found or UID mismatch", Toast.LENGTH_SHORT).show()
+                        }
+                    } else {
+                        // Authentication sign-in failed
+                        Log.d("CHECK THIS", "Failed to sign in to delete user: ${task.exception?.message}")
+                        println("Failed to sign in to delete user: ${task.exception?.message}")
+                        Toast.makeText(context, "Failed to delete employee", Toast.LENGTH_SHORT).show()
+                    }
+                }
+//in the last remove employee value from realtime database
             employeeRef.removeValue().await()
-            withContext(Dispatchers.Main) {
-                Toast.makeText(context, "Employee deleted successfully", Toast.LENGTH_SHORT).show()
-            }
+
         } catch (e: Exception) {
             // Handle database error
             println("Failed to delete employee: ${e.message}")
-            withContext(Dispatchers.Main) {
-                Toast.makeText(context, "Failed to delete employee", Toast.LENGTH_SHORT).show()
-            }
+            Toast.makeText(context, "Failed to delete employee", Toast.LENGTH_SHORT).show()
         }
     }
+
 
     suspend fun deleteLocation(locationId: String, context: Context) = withContext(Dispatchers.IO) {
         val locationRef = database.child("locations").child(locationId)

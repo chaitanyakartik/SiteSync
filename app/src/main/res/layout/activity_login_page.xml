@@ -37,27 +37,27 @@
         android:layout_marginBottom="16dp"
         android:text="Forgot Password" />
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/buttonAdminView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/buttonForgotPassword"
-        android:layout_marginBottom="16dp"
-        android:textAllCaps="false"
-        android:background="@drawable/my_shaped_button"
-        android:shadowColor="@color/black"
-        android:text="Admin View" />
+<!--    <androidx.appcompat.widget.AppCompatButton-->
+<!--        android:id="@+id/buttonAdminView"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_below="@id/buttonForgotPassword"-->
+<!--        android:layout_marginBottom="16dp"-->
+<!--        android:textAllCaps="false"-->
+<!--        android:background="@drawable/my_shaped_button"-->
+<!--        android:shadowColor="@color/black"-->
+<!--        android:text="Admin View" />-->
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/buttonEmployeeView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/buttonAdminView"
-        android:layout_marginBottom="16dp"
-        android:textAllCaps="false"
-        android:background="@drawable/my_shaped_button"
-        android:shadowColor="@color/black"
-        android:text="Employee View" />
+<!--    <androidx.appcompat.widget.AppCompatButton-->
+<!--        android:id="@+id/buttonEmployeeView"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_below="@id/buttonAdminView"-->
+<!--        android:layout_marginBottom="16dp"-->
+<!--        android:textAllCaps="false"-->
+<!--        android:background="@drawable/my_shaped_button"-->
+<!--        android:shadowColor="@color/black"-->
+<!--        android:text="Employee View" />-->
 
 
 </RelativeLayout>

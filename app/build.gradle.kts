@@ -76,4 +76,8 @@ dependencies {
 
     implementation ("net.sourceforge.jexcelapi:jxl:2.6.12")
 
+    //implementation ("com.google.firebase:firebase-admin:9.0.0")
+    implementation ("com.google.firebase:firebase-auth:21.0.1")
+
+
 }

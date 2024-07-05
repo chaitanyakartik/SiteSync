@@ -33,11 +33,17 @@
         android:textSize="16sp"
         android:layout_marginBottom="16dp" />
 
+    <EditText
+        android:id="@+id/passwordEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter password"
+        android:layout_margin="16dp" />
+
     <View
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1" />
-
     <!-- Button -->
     <Button
         android:id="@+id/buttonConfirmDeletion"
@@ -46,5 +52,7 @@
         android:text="Delete Employee Permanently"
         android:backgroundTint="@android:color/holo_blue_dark"
         android:textColor="@android:color/white" />
+
+
 
 </LinearLayout>

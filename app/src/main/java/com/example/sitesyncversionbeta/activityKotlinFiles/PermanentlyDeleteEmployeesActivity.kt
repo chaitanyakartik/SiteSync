@@ -5,6 +5,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.AdapterView
 import android.widget.ListView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.sitesyncversionbeta.R
 import com.example.sitesyncversionbeta.adapters.EmployeeAdapter
@@ -36,14 +37,20 @@ class PermanentlyDeleteEmployeesActivity : AppCompatActivity() {
             // Set item click listener
             listView.onItemClickListener = AdapterView.OnItemClickListener { _, _, position, _ ->
                 val selectedEmployee = adapter.getItem(position)
-                val intent = Intent(
-                    this@PermanentlyDeleteEmployeesActivity,
-                    ConfirmEmployeeDeletionActivity::class.java
-                )
-                intent.putExtra("employee", selectedEmployee)
-                startActivity(intent)
+                if (selectedEmployee != null) {
+                    if (selectedEmployee.email == "chaitanyakartikm@gmail.com"){
+                        Toast.makeText(this@PermanentlyDeleteEmployeesActivity, "Cannot delete this user", Toast.LENGTH_SHORT).show()
+                    }
+                    else{
+                        val intent = Intent(
+                            this@PermanentlyDeleteEmployeesActivity,
+                            ConfirmEmployeeDeletionActivity::class.java
+                        )
+                        intent.putExtra("employee", selectedEmployee)
+                        startActivity(intent)
+                    }
+                }
             }
         }
-
     }
 }

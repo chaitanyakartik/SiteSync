@@ -34,7 +34,7 @@
         android:layout_below="@id/editTextNumber"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
-        android:hint="Password" />
+        android:hint="Password (minimum 6 characters)" />
 
     <Spinner
         android:id="@+id/spinnerRole"
